@@ -58,3 +58,12 @@ ggplot(cleaned_data, aes(x = year, y = unemployment_rate)) +
          x = "Year",
          y = "Unemployment Rate") +
     theme_minimal()
+
+# Step 5: Calculate correlations
+correlation <- cor(cleaned_data$unemployment_rate, as.numeric(cleaned_data$year), use = "complete.obs")
+print(paste("Correlation between unemployment rate and year:", round(correlation, 2)))
+
+# Hypothesis testing
+# Run correlation test for numeric variable (year)
+cor_test <- cor.test(cleaned_data$unemployment_rate, cleaned_data$year, method = "pearson")
+print(cor_test)
