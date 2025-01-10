@@ -16,6 +16,8 @@ cleaned_data <- data %>%
 # Convert relevant columns to appropriate data types
 cleaned_data$city <- as.factor(cleaned_data$city)
 cleaned_data$state <- as.factor(cleaned_data$state)
+cleaned_data$year <- as.numeric(cleaned_data$year)
+cleaned_data$unemployment_rate <- as.numeric(cleaned_data$unemployment_rate)
 
 
 # View cleaned data
